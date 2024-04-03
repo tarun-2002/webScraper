@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Data</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Scraped Data</h1>
+    <ul>
+        {% for data in elements_data %}
+        <li>
+            {% if data.placeholder %}
+            {{ data.placeholder }}
+            {% elif data.first_option %}
+            {{ data.first_option }}
+            {% endif %} ==
+            <span class="red">{{ data.id }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
